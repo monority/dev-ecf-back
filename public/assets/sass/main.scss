@@ -1,0 +1,50 @@
+@use "reset";
+@use "variables" as v;
+@import "mixin";
+
+// Globales
+a {
+    font-family: v.$font-second;
+    color: v.$color-faded-lightgrey;
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+
+}
+
+p {
+    font-weight: 500;
+    font-size: v.$font-xlarge;
+    line-height: 1.7rem;
+    margin: 0;
+}
+
+.block {
+    @media screen and (min-width : v.$lg-breakpoint ) {
+        min-height: 70vh;
+    }
+
+    min-height: 60vh;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 40rem;
+
+    @media screen and (min-width : v.$lg-breakpoint ) {
+        min-height: 130rem;
+    }
+}
