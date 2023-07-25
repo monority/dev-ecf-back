@@ -16,7 +16,7 @@ class addMatelasView
         if (!empty($_POST)) {
             $data = $this->controller->getForm();
             if (!$this->controller->validateInput()) {
-                $errors["message"] = "Les champs ne sont pas validés";
+                $errors["message"] = $this->controller->errors;
             }
             if (empty($errors)) {
                 if ($this->controller->addMatelas()) {
@@ -25,7 +25,7 @@ class addMatelasView
                     $message = "Erreur de bdd";
                 }
             } else {
-                $message = "<div class=\"alert\">Remplisser les champs</div>";
+                $message = "<div class=\"alert alert-danger\">{$errors["message"]}</div>";
             }
 
         }

@@ -13,7 +13,7 @@ class deleteMatelasView
     public function render()
     {
        if ($this->controller->deleteMatelas()){
-        header("Location : ./");
+        header("Location : ../");
        }
         require($this->template);
 

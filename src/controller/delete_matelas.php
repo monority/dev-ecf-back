@@ -12,16 +12,14 @@ class deleteMatelasController
     {
         if (isset($_GET["id"])) {
             $matelasId = $_GET["id"];
-            $deleteQuery = "DELETE FROM literie.matelas_promos WHERE matelas_id = :id";
-            $deleteStmt = $this->model->db->prepare($deleteQuery);
-            $deleteStmt->bindParam(":id", $matelasId, PDO::PARAM_INT);
-            $deleteStmt->execute();
-
-            // Then, proceed with deleting the matelas row
-            $deleteMatelasQuery = "DELETE FROM literie.matelas WHERE id = :id";
-            $deleteMatelasStmt = $this->model->db->prepare($deleteMatelasQuery);
-            $deleteMatelasStmt->bindParam(":id", $matelasId, PDO::PARAM_INT);
-            $deleteMatelasStmt->execute();
+            
+            $query = $this->model->db->prepare("DELETE FROM literie.matelas_promos WHERE matelas_id = :id");
+            $query->bindParam(":id", $matelasId, PDO::PARAM_INT);
+            $query->execute();
+            
+            $query_second = $this->model->db->prepare("DELETE FROM literie.matelas WHERE id = :id");
+            $query_second->bindParam(":id", $matelasId, PDO::PARAM_INT);
+            $query_second->execute();
         }
     }
 

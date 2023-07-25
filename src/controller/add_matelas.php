@@ -2,6 +2,7 @@
 class addMatelasController
 {
     private $model;
+    public $errors;
 
 
     public function __construct(addMatelasModel $model)
@@ -45,7 +46,7 @@ class addMatelasController
     public function validateInput()
     {
         if (empty($this->model->marque) || empty($this->model->image) || empty($this->model->type) || empty($this->model->largeur) || empty($this->model->longueur) || empty($this->model->prix)) {
-
+            $this->errors = "Remplisser les champs";
             return false;
         } else {
             return true;
