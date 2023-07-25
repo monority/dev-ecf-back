@@ -22,15 +22,20 @@
     <div id="home">
         <div class="title-wrap">
             <h1>Catalogue</h1>
+            <a href="add_matelas">
+                <h1>Ajout d'un matelas</h1>
+            </a>
         </div>
         <div class="content-wrap">
             <?php
             foreach ($data as $matelas) {
                 ?>
                 <div class="matelas-box">
-                    <div class="image-wrap">
-                        <img src="<?= $matelas["image"] ?>" alt="">
-                    </div>
+                    <?php if (isset($matelas["image"])) { ?>
+                        <div class="image-wrap">
+                            <img src="<?= $matelas["image"] ?>" alt="">
+                        </div>
+                    <?php } ?>
                     <div class="head-wrap">
                         <h1>
                             <?= $matelas["marque"] ?>
@@ -42,8 +47,8 @@
                     </div>
                     <div class="wrap">
                         <p>Dimension : <strong>
-                                <?= $matelas["largeur"] ?> x
-                                <?= $matelas["longueur"] ?>
+                                <?= $matelas["largeur"] ?> cm x
+                                <?= $matelas["longueur"] ?> cm
                             </strong></p>
                     </div>
                     <div class="price-wrap">
@@ -62,7 +67,7 @@
                 <?php
             }
             ?>
-           
+
         </div>
 
     </div>

@@ -20,6 +20,11 @@ $components = array(
 		"view" => "matelasView",
 		"controller" => "matelasController"
 	),
+	"add_matelas" => array(
+		"model" => "addMatelasModel",
+		"view" => "addMatelasView",
+		"controller" => "addMatelasController"
+	),
 );
 
 $find = false;
