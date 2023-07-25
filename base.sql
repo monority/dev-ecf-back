@@ -82,6 +82,14 @@ VALUES
         120,
         180,
         950
+    ),
+    (
+        "IKEA",
+        "Matelas naturel",
+        "https://www.ikea.com/ch/fr/images/products/mausund-matelas-latex-naturel-mi-ferme-naturel__0559075_pe665217_s5.jpg?f=s",
+        140,
+        200,
+        1200
     );
 INSERT INTO
     promos(newprice)

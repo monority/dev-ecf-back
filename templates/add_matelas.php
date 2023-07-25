@@ -24,7 +24,7 @@
             <h1>Ajouter un matelas</h1>
             <?= $message ?>
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="" method="post">
                 <div class="form-group">
                     <label for="inputMarque">Marque du matelas :</label>
                     <input type="text" id="inputMarque" name="marque"
