@@ -2,10 +2,6 @@
 RewriteEngine on
 
 # Règles de réécriture d'URL :
-RewriteRule ^add-account$   ./index.php?page=add-account
-RewriteRule ^create-account$   ./index.php?page=create-account
-RewriteRule ^login$   ./index.php?page=login
-RewriteRule ^new-password/([a-z0-9]+)$   ./index.php?page=new-password&token=$1
-RewriteRule ^play$   ./index.php?page=play
-RewriteRule ^reset-password$   ./index.php?page=reset-password
-RewriteRule ^logout$   ./logout.php
+RewriteRule ^matelas/([0-9]+)$ index.php?page=matelas&id=$1
+RewriteRule ^delete_matelas/([0-9]+)$ index.php?page=delete_matelas&id=$1
+RewriteRule ^add_matelas$   ./index.php?page=add_matelas

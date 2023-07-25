@@ -1,5 +1,5 @@
 <?php
-define("HOST", "http://localhost/");
+define("HOST", "http://localhost/literie3000/public");
 
 define('DIR_APPLICATION', '../src/');
 define('DIR_MODEL', DIR_APPLICATION.'model/');

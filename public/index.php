@@ -15,6 +15,21 @@ $components = array(
 		"view" => "HomeView",
 		"controller" => "HomeController"
 	),
+	"matelas" => array(
+		"model" => "matelasModel",
+		"view" => "matelasView",
+		"controller" => "matelasController"
+	),
+	"add_matelas" => array(
+		"model" => "addMatelasModel",
+		"view" => "addMatelasView",
+		"controller" => "addMatelasController"
+	),
+	"delete_matelas" => array(
+		"model" => "deleteMatelasModel",
+		"view" => "deleteMatelasView",
+		"controller" => "deleteMatelasController"
+	),
 );
 
 $find = false;
