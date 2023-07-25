@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label for="inputMarque">Marque du matelas :</label>
                     <input type="text" id="inputMarque" name="marque"
-                        value="<?= isset($data["marque"]) ? $data["marque"] : "" ?>" required />
+                        value="<?= isset($data["marque"]) ? $data["marque"] : "" ?>" />
                     <?php if (isset($errors["marque"])) {
                         ?>
                         <span class="info-error">

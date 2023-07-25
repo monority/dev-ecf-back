@@ -3,6 +3,7 @@ class addMatelasController
 {
     private $model;
 
+
     public function __construct(addMatelasModel $model)
     {
         $this->model = $model;
@@ -41,13 +42,15 @@ class addMatelasController
 
     }
 
-    public function validateBrand()
+    public function validateInput()
     {
-        if (empty($this->model->marque)) {
+        if (empty($this->model->marque) || empty($this->model->image) || empty($this->model->type) || empty($this->model->largeur) || empty($this->model->longueur) || empty($this->model->prix)) {
+
             return false;
         } else {
             return true;
         }
+
     }
     public function addMatelas()
     {

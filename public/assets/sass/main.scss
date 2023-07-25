@@ -80,7 +80,6 @@ p {
             width: 10rem;
 
         }
-
         img:nth-child(2) {
             width: 35rem;
         }
@@ -222,6 +221,5 @@ p {
 }
 
 #delete {
-
     @include center();
 }

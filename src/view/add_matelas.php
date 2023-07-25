@@ -15,13 +15,10 @@ class addMatelasView
         $message = "";
         if (!empty($_POST)) {
             $data = $this->controller->getForm();
-            if (!$this->controller->validateBrand()) {
-                $errors["marque"] = "Nom requis";
+            if (!$this->controller->validateInput()) {
+                $errors["message"] = "Les champs ne sont pas validés";
             }
-            // if (!$this->controller->validatePicture()) {
-            //     $errors["picture"] = "L'image ne fonctionne pas";
-            // }
-            if (empty($errors["marque"])) {
+            if (empty($errors)) {
                 if ($this->controller->addMatelas()) {
                     header("Location: ./");
                 } else {
