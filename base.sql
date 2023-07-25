@@ -36,36 +36,52 @@ INSERT INTO
     )
 VALUES
     (
-        "365",
-        "Premium",
+        "EPEDA",
+        "Matelas Pas touché",
         "https://www.lematelas365.com/64-large_default/matelas-premium.jpg",
         90,
         190,
-        960
+        759
     ),
     (
-        "365",
-        "Boost",
+        "DREAMWAY",
+        "Matelas Lapin",
         "https://www.lematelas365.com/71-large_default/matelas-boost.jpg",
-        120,
-        170,
-        1450
+        90,
+        190,
+        809
     ),
     (
-        "La compagnie",
-        "Confort",
+        "BULTEX",
+        "Matelas Alejandrinho",
         "https://media.lacompagniedulit.com/4296/matelas-la-compagnie-du-lit-confort-paisible.jpg?t=1689694591&width=2000&func=cover",
         140,
         190,
-        2189
+        759
     ),
     (
-        "Ikea",
-        "Ensaches",
+        "EPEDA",
+        "Matelas Papy",
         "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-a-ressorts-ensaches-mi-ferme-bleu-clair__1150852_pe884907_s5.jpg?f=xl",
         140,
         190,
-        1500
+        1019
+    ),
+    (
+        "Ikea",
+        "Matelas doux",
+        "https://www.allomatelas.com/USER/img/produits/HD/6341.jpg",
+        140,
+        190,
+        1015
+    ),
+    (
+        "NESS",
+        "Matelas confort",
+        "https://www.matelas-pas-cher.fr/9-large_default/matelas-epeda-ness-140x190.jpg",
+        120,
+        180,
+        950
     );
 INSERT INTO
     promos(newprice)

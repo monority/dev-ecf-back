@@ -5,17 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Literie3000</title>
-    <link rel="stylesheet" href="../css/main.css" />
-    <link rel="shortcut icon" href="/path/to/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../public/assets/css/main.css" />
+    <link rel="shortcut icon" href="../public/assets/img/2.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
 
 
 </head>
 
 <body>
     <?php
+    $home = true;
     require_once("header.php");
     ?>
-
     <div id="home">
         <div class="title-wrap">
             <h1>Catalogue</h1>
@@ -50,15 +53,18 @@
                         <p>
                             <?php isset($newprice) ? $newprice : "" ?>
                         </p>
-                        <a href="matelas/<?= $matelas["id"] ?>">Détail</a>
+                        <a href="matelas/<?= $matelas["id"] ?>" class="btn">Détail</a>
 
 
                     </div>
+
                 </div>
                 <?php
             }
             ?>
+           
         </div>
+
     </div>
 </body>
 

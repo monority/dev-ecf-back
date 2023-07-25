@@ -59,6 +59,15 @@ p {
   }
 }
 
+.btn {
+  border: 0.2px rgba(224, 224, 224, 0.5137254902) solid;
+  border-radius: 1rem;
+  background-color: #6b9af8;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 0 1rem;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -78,6 +87,7 @@ p {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 @media screen and (min-width: 992px) {
   #home .content-wrap {
@@ -105,13 +115,17 @@ p {
 }
 @media screen and (min-width: 992px) {
   #home .matelas-box {
-    margin: 0 1rem;
+    margin: 2rem;
   }
 }
 #home .matelas-box img {
   width: 35rem;
   height: 20rem;
   object-fit: contain;
+}
+#home .price-wrap {
+  display: flex;
+  align-items: center;
 }
 #home .price-wrap p {
   color: #6b9af8;
@@ -122,6 +136,17 @@ p {
 #home .wrap strong {
   font-weight: 100;
   color: rgba(70, 70, 70, 0.9019607843);
+}
+
+#detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+#detail img {
+  width: 55rem;
 }
 
 /*# sourceMappingURL=main.css.map */
