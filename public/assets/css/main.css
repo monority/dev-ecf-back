@@ -58,6 +58,10 @@ p {
   }
 }
 
+.block {
+  margin-top: 2rem;
+}
+
 .btn {
   border: 0.2px rgba(224, 224, 224, 0.5137254902) solid;
   border-radius: 1rem;
@@ -93,6 +97,10 @@ p {
   width: 35rem;
 }
 
+#home .line-through {
+  text-decoration: line-through;
+  margin-right: 1rem;
+}
 #home .content-wrap {
   display: flex;
   align-items: center;
@@ -107,7 +115,6 @@ p {
 }
 #home .title-wrap {
   display: flex;
-  margin: 2rem 0;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -201,7 +208,6 @@ p {
 }
 
 #delete {
-  margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;

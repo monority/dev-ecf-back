@@ -19,7 +19,7 @@
     $home = true;
     require_once("header.php");
     ?>
-    <div id="home">
+    <div id="home" class="block">
         <div class="title-wrap">
             <h1>Catalogue</h1>
             <a href="add_matelas">
@@ -31,10 +31,10 @@
             foreach ($data as $matelas) {
                 ?>
                 <div class="matelas-box">
-                        <div class="image-wrap">
-                            <img src="<?= $matelas["image"] ?>" alt="">
-                        </div>
-             
+                    <div class="image-wrap">
+                        <img src="<?= $matelas["image"] ?>" alt="">
+                    </div>
+
                     <div class="head-wrap">
                         <h1>
                             <?= $matelas["marque"] ?>
@@ -51,23 +51,27 @@
                             </strong></p>
                     </div>
                     <div class="price-wrap">
-                        <p>
-                            <?= $matelas["prix"] ?>€
-                        </p>
-                        <p>
-                            <?php isset($newprice) ? $newprice : "" ?>
-                        </p>
+                        <?php if (isset($matelas["promos"])) { ?>
+                            <p class="line-through">
+                                <?= $matelas["prix"] ?>€ 
+                            </p>
+                            <p>
+                                <?= $matelas["promos"] ?>€  
+                            </p>
+                        <?php } else { ?>
+                            <p>
+                                <?= $matelas["prix"] ?>€
+                            </p>
+                        <?php } ?>
+                    </div>
+                    <div class="button-wrap">
                         <a href="matelas/<?= $matelas["id"] ?>" class="btn">Détail</a>
                         <a href="delete_matelas/<?= $matelas["id"] ?>" class="btn btn-delete">Supprimer</a>
-
-
                     </div>
-
                 </div>
                 <?php
             }
             ?>
-
         </div>
 
     </div>

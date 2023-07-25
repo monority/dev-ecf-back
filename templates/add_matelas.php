@@ -19,7 +19,7 @@
     $home = true;
     require_once("header.php");
     ?>
-    <div id="add">
+    <div id="add" class="block">
         <div class="container">
             <h1>Ajouter un matelas</h1>
             <?= $message ?>
@@ -84,6 +84,12 @@
                     <label for="inputLongueur">Longueur :</label>
                     <input type="number" name="longueur" id="inputLongueur"
                         value="<?= isset($data["longueur"]) ? $data["longueur"] : 0 ?>" required />
+
+                </div>
+                <div class="form-group">
+                    <label for="inputPrix">Prix :</label>
+                    <input type="number" name="prix" id="inputprix"
+                        value="<?= isset($data["prix"]) ? $data["prix"] : 0 ?>" required />
 
                 </div>
                 <div class="form-group">

@@ -18,7 +18,7 @@
     <?php
     require_once("header.php");
     ?>
-    <div id="delete">
+    <div id="delete" class="block">
         <h1>Matelas supprimé</h1>
         <a href="../" class="btn btn-back">Retour</a>
 

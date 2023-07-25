@@ -6,7 +6,6 @@ CREATE TABLE matelas(
     id TINYINT PRIMARY KEY AUTO_INCREMENT,
     marque VARCHAR(20) NOT NULL,
     image VARCHAR(255),
-    picture VARCHAR(255),
     type VARCHAR(50),
     largeur SMALLINT,
     longueur SMALLINT,
@@ -15,7 +14,7 @@ CREATE TABLE matelas(
 
 create TABLE promos(
     id TINYINT PRIMARY KEY AUTO_INCREMENT,
-    newprice SMALLINT NOT NULL
+    newprice SMALLINT
 );
 
 CREATE TABLE matelas_promos(
@@ -87,8 +86,8 @@ VALUES
 INSERT INTO
     promos(newprice)
 VALUES
-    (896),
-    (1433);
+    (650),
+    (999);
 INSERT INTO
     matelas_promos(matelas_id, promos_id)
 VALUES

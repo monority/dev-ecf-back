@@ -19,7 +19,7 @@
     <?php
     require("header.php");
     ?>
-    <div id="detail">
+    <div id="detail" class="block">
         <?php
 
         if (empty($data)) {
