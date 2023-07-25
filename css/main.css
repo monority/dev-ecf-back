@@ -21,10 +21,6 @@ body {
   padding: 0;
 }
 
-@font-face {
-  font-family: "Dharma";
-  src: url("../fonts/DharmaGothicE_Regular_R.woff") format("woff"), url("../fonts/DharmaGothicE_Regular_R.woff2") format("woff2");
-}
 a {
   font-family: "Inter", sans-serif;
   color: #686868;
@@ -76,23 +72,56 @@ p {
 .header .header-wrap img:nth-child(2) {
   width: 35rem;
 }
-.header .header-wrap h1 {
-  font-family: "Dharma";
-}
 
 #home .content-wrap {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+@media screen and (min-width: 992px) {
+  #home .content-wrap {
+    flex-direction: row;
+  }
+}
+#home .title-wrap {
+  margin: 2rem 0;
+}
+#home .title-wrap h1 {
+  text-align: center;
 }
 #home .matelas-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 35rem;
   height: 45rem;
-  background-color: #f8f8f8;
+  background-color: white;
   border: 0.2px rgba(224, 224, 224, 0.5137254902) solid;
   border-radius: 1rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1019607843), 0 4px 6px -4px rgba(0, 0, 0, 0.1019607843);
+  margin: 1rem 0;
+  padding: 1.5rem;
+}
+@media screen and (min-width: 992px) {
+  #home .matelas-box {
+    margin: 0 1rem;
+  }
 }
 #home .matelas-box img {
-  width: 30rem;
+  width: 35rem;
+  height: 20rem;
+  object-fit: contain;
+}
+#home .price-wrap p {
+  color: #6b9af8;
+}
+#home .wrap p {
+  font-size: calc(1.2rem + 0.3vw);
+}
+#home .wrap strong {
+  font-weight: 100;
+  color: rgba(70, 70, 70, 0.9019607843);
 }
 
 /*# sourceMappingURL=main.css.map */

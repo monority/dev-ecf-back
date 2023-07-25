@@ -13,6 +13,7 @@ class HomeView
     public function render()
     {
         $data = $this->controller->getMatelas();
+        $newprice = $this->controller->getPromos();
         require($this->template);
     }
 }

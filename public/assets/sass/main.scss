@@ -4,11 +4,6 @@
 
 // Globales
 
-@font-face {
-    font-family: 'Dharma';
-    src: url('../fonts/DharmaGothicE_Regular_R.woff') format('woff'),
-        url('../fonts/DharmaGothicE_Regular_R.woff2') format('woff2');
-}
 
 a {
     font-family: v.$font-second;
@@ -66,26 +61,63 @@ p {
             width: 35rem;
         }
 
-        h1 {
-            font-family: "Dharma";
-        }
+
     }
 
 }
 
-#home{
-    .content-wrap{
+#home {
+
+    .content-wrap {
         display: flex;
+        align-items: center;
+        justify-content: center;
+      flex-direction: column;
+      @media screen and (min-width : v.$lg-breakpoint ) {
+        flex-direction: row;
     }
-    .matelas-box{
+    }
+    .title-wrap{
+        margin: 2rem 0;
+        h1{
+            text-align: center;
+        }
+    }
+
+    .matelas-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: 35rem;
         height: 45rem;
-        background-color: v.$color-white;
+        background-color: white;
         border: v.$border-classic;
         border-radius: 1rem;
         box-shadow: v.$box-shadow;
-        img{
-            width: 30rem;
+        margin:1rem 0;
+        padding: 1.5rem;
+        @media screen and (min-width : v.$lg-breakpoint ) {
+            margin: 0 1rem;
+        }
+
+        img {
+            width: 35rem;
+            height: 20rem;
+            object-fit: contain;
+        }
+    }
+    .price-wrap{
+        p{
+            color: v.$color-blue;
+        }
+    }
+    .wrap{
+      p{
+        font-size: v.$font-xsmedium;
+      }
+        strong{
+            font-weight: 100;
+            color: v.$color-faded-grey;
         }
     }
 }
