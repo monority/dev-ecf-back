@@ -3,4 +3,6 @@ RewriteEngine on
 
 # Règles de réécriture d'URL :
 RewriteRule ^matelas/([0-9]+)$ index.php?page=matelas&id=$1
+RewriteRule ^delete_matelas/([0-9]+)$ index.php?page=delete_matelas&id=$1
+
 RewriteRule ^add_matelas$   ./index.php?page=add_matelas

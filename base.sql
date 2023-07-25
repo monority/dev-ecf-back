@@ -6,6 +6,7 @@ CREATE TABLE matelas(
     id TINYINT PRIMARY KEY AUTO_INCREMENT,
     marque VARCHAR(20) NOT NULL,
     image VARCHAR(255),
+    picture VARCHAR(255),
     type VARCHAR(50),
     largeur SMALLINT,
     longueur SMALLINT,

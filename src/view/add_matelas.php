@@ -18,15 +18,17 @@ class addMatelasView
             if (!$this->controller->validateBrand()) {
                 $errors["marque"] = "Nom requis";
             }
-            if (empty($errors)) {
-                if ($this->controller->addMatelas()){
+            // if (!$this->controller->validatePicture()) {
+            //     $errors["picture"] = "L'image ne fonctionne pas";
+            // }
+            if (empty($errors["marque"])) {
+                if ($this->controller->addMatelas()) {
                     header("Location: ./");
                 } else {
                     $message = "Erreur de bdd";
                 }
             } else {
-                // Message d'erreur
-                $message = "<div class=\"alert\">{$errors["message"]}</div>";
+                $message = "<div class=\"alert\">Remplisser les champs</div>";
             }
 
         }
@@ -34,4 +36,3 @@ class addMatelasView
 
     }
 }
-

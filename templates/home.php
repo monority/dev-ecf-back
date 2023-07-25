@@ -31,11 +31,10 @@
             foreach ($data as $matelas) {
                 ?>
                 <div class="matelas-box">
-                    <?php if (isset($matelas["image"])) { ?>
                         <div class="image-wrap">
                             <img src="<?= $matelas["image"] ?>" alt="">
                         </div>
-                    <?php } ?>
+             
                     <div class="head-wrap">
                         <h1>
                             <?= $matelas["marque"] ?>
@@ -59,6 +58,7 @@
                             <?php isset($newprice) ? $newprice : "" ?>
                         </p>
                         <a href="matelas/<?= $matelas["id"] ?>" class="btn">Détail</a>
+                        <a href="delete_matelas" class="btn btn-delete">Supprimer</a>
 
 
                     </div>
@@ -75,4 +75,4 @@
 
 </html>
 
-<!-- sass --watch ../public/assets/sass/main.scss css/main.css -->
+<!-- sass --watch public/assets/sass/main.scss public/assets/css/main.css -->

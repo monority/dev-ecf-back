@@ -8,6 +8,7 @@ class addMatelasModel
     public $longueur;
     public $image;
     public $prix;
+    public $newFilename;
     public function __construct($db)
     {
         $this->db = $db;

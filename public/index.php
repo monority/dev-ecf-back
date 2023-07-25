@@ -25,6 +25,11 @@ $components = array(
 		"view" => "addMatelasView",
 		"controller" => "addMatelasController"
 	),
+	"delete_matelas" => array(
+		"model" => "deleteMatelasModel",
+		"view" => "deleteMatelasView",
+		"controller" => "deleteMatelasController"
+	),
 );
 
 $find = false;
