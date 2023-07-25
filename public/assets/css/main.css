@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: none;
+  scroll-behavior: smooth;
+  scrollbar-color: #8e8e8e #fff;
+  scrollbar-width: thin;
+  text-rendering: optimizeLegibility;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #efefef;
+  color: #2f2f2f;
+  font-family: "Mulish", sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  font-family: "Inter", sans-serif;
+  color: #686868;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-weight: 500;
+  font-size: calc(1.8rem + 0.3vw);
+  line-height: 1.7rem;
+  margin: 0;
+}
+
+.block {
+  min-height: 60vh;
+}
+@media screen and (min-width: 992px) {
+  .block {
+    min-height: 70vh;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 40rem;
+}
+@media screen and (min-width: 992px) {
+  .container {
+    min-height: 130rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
