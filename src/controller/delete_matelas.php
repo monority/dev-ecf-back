@@ -10,11 +10,18 @@ class deleteMatelasController
     }
     public function deleteMatelas()
     {
-        if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
+        if (isset($_GET["id"])) {
             $matelasId = $_GET["id"];
-            $query = $this->model->db->prepare("DELETE FROM literie.matelas WHERE id = :id");
-            $query->bindParam(":id", $matelasId, PDO::PARAM_INT);
-            $query->execute();
+            $deleteQuery = "DELETE FROM literie.matelas_promos WHERE matelas_id = :id";
+            $deleteStmt = $this->model->db->prepare($deleteQuery);
+            $deleteStmt->bindParam(":id", $matelasId, PDO::PARAM_INT);
+            $deleteStmt->execute();
+
+            // Then, proceed with deleting the matelas row
+            $deleteMatelasQuery = "DELETE FROM literie.matelas WHERE id = :id";
+            $deleteMatelasStmt = $this->model->db->prepare($deleteMatelasQuery);
+            $deleteMatelasStmt->bindParam(":id", $matelasId, PDO::PARAM_INT);
+            $deleteMatelasStmt->execute();
         }
     }
 

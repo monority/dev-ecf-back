@@ -58,7 +58,7 @@
                             <?php isset($newprice) ? $newprice : "" ?>
                         </p>
                         <a href="matelas/<?= $matelas["id"] ?>" class="btn">Détail</a>
-                        <a href="delete_matelas" class="btn btn-delete">Supprimer</a>
+                        <a href="delete_matelas/<?= $matelas["id"] ?>" class="btn btn-delete">Supprimer</a>
 
 
                     </div>
