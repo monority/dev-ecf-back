@@ -7,7 +7,7 @@
     scrollbar-color: #8e8e8e #fff;
     scrollbar-width: thin;
     text-rendering: optimizeLegibility;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 
 html {
@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    background-color: v.$background-default;
+    background-color: v.$color-white;
     color: v.$color-default;
     font-family: v.$font-default;
     font-size: 1.6rem;
