@@ -2,102 +2,108 @@ CREATE DATABASE IF NOT EXISTS literie;
 
 USE literie;
 
-CREATE TABLE matelas(
-    id TINYINT PRIMARY KEY AUTO_INCREMENT,
-    marque VARCHAR(20) NOT NULL,
-    image VARCHAR(255),
-    type VARCHAR(50),
-    largeur SMALLINT,
-    longueur SMALLINT,
-    prix SMALLINT
+CREATE TABLE brands (
+	id TINYINT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL
 );
 
-create TABLE promos(
-    id TINYINT PRIMARY KEY AUTO_INCREMENT,
-    newprice SMALLINT
+CREATE TABLE dimensions (
+	id TINYINT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE matelas_promos(
-    matelas_id TINYINT,
-    promos_id TINYINT,
-    FOREIGN KEY(matelas_id) REFERENCES matelas(id),
-    FOREIGN KEY(promos_id) REFERENCES promos(id),
-    PRIMARY KEY(matelas_id, promos_id)
+CREATE TABLE products (
+	id SMALLINT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	image VARCHAR(255),
+	price DECIMAL(6,2) NOT NULL,
+	discount DECIMAL(6,2),
+	id_dimension TINYINT,
+	id_brand TINYINT,
+	FOREIGN KEY (id_brand) REFERENCES brands(id),
+	FOREIGN KEY (id_dimension) REFERENCES dimensions(id)
 );
 
-INSERT INTO
-    matelas(
-        marque,
-        type,
-        image,
-        largeur,
-        longueur,
-        prix
-    )
+INSERT INTO brands 
+(name) 
+VALUES
+("IKEA"),
+("BEDCOVER"),
+("OYERA"),
+("PULRE"),
+("FLAT5");
+
+INSERT INTO dimensions
+(name)
+VALUES
+("90x190"),
+("140x190"),
+("160x200"),
+("180x200"),
+("200x200");
+
+INSERT INTO `products` (`id`, `name`, `image`, `price`, `discount`, `id_dimension`, `id_brand`)
 VALUES
     (
-        "EPEDA",
-        "Matelas Pas touché",
+        "Matelas Confort",
         "https://www.lematelas365.com/64-large_default/matelas-premium.jpg",
-        90,
-        190,
-        759
+        709.99,
+        200.99,
+        1,
+        1
     ),
     (
-        "DREAMWAY",
-        "Matelas Lapin",
+
+        "Matelas Confort",
         "https://www.lematelas365.com/71-large_default/matelas-boost.jpg",
-        90,
-        190,
-        809
+        900.00,
+        0.00,
+        2,
+        1
+
     ),
     (
-        "BULTEX",
-        "Matelas Alejandrinho",
+
+        "Matelas Premium",
         "https://media.lacompagniedulit.com/4296/matelas-la-compagnie-du-lit-confort-paisible.jpg?t=1689694591&width=2000&func=cover",
-        140,
-        190,
-        759
+        999.99,
+        100.00,
+        1,
+        3
     ),
     (
-        "EPEDA",
-        "Matelas Papy",
+
+        "Matelas Robuste",
         "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-a-ressorts-ensaches-mi-ferme-bleu-clair__1150852_pe884907_s5.jpg?f=xl",
-        140,
-        190,
-        1019
+        699.99,
+        50.00,
+        2,
+        4
     ),
     (
-        "Ikea",
-        "Matelas doux",
+
+        "Matelas Doux",
         "https://www.allomatelas.com/USER/img/produits/HD/6341.jpg",
-        140,
-        190,
-        1015
+       1288.99,
+        0.00,
+        2,
+        1
     ),
     (
-        "NESS",
-        "Matelas confort",
+
+        "Matelas Naturel",
         "https://www.matelas-pas-cher.fr/9-large_default/matelas-epeda-ness-140x190.jpg",
-        120,
-        180,
-        950
+        999.99,
+        0.00,
+        1,
+        3
     ),
     (
-        "IKEA",
-        "Matelas naturel",
+
+        "Matelas Solide",
         "https://www.ikea.com/ch/fr/images/products/mausund-matelas-latex-naturel-mi-ferme-naturel__0559075_pe665217_s5.jpg?f=s",
-        140,
-        200,
-        1200
+     588.99,
+        200.00,
+        1,
+        2
     );
-INSERT INTO
-    promos(newprice)
-VALUES
-    (650),
-    (999);
-INSERT INTO
-    matelas_promos(matelas_id, promos_id)
-VALUES
-    (1, 1),
-    (4, 2)

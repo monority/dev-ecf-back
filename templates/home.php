@@ -37,32 +37,33 @@
 
                     <div class="head-wrap">
                         <h1>
-                            <?= $matelas["marque"] ?>
+                            <?= $matelas["brand"] ?>
                         </h1>
                         <p>
-                            <?= $matelas["type"] ?>
+                            <?= $matelas["name"] ?>
                         </p>
                         <hr>
                     </div>
                     <div class="wrap">
                         <p>Dimension : <strong>
-                                <?= $matelas["largeur"] ?> cm x
-                                <?= $matelas["longueur"] ?> cm
+                                <?= $matelas["dimension"] ?>
+
                             </strong></p>
                     </div>
                     <div class="price-wrap">
-                        <?php if (isset($matelas["promos"])) { ?>
-                            <p class="line-through">
-                                <?= $matelas["prix"] ?>€ 
-                            </p>
-                            <p>
-                                <?= $matelas["promos"] ?>€  
-                            </p>
-                        <?php } else { ?>
-                            <p>
-                                <?= $matelas["prix"] ?>€
-                            </p>
-                        <?php } ?>
+                    <?php $price = $formatter->formatCurrency($matelas["price"], "EUR");    ?>
+                        <span class="<?= $matelas["discount"] != number_format(0, 2) ? "line-through" : "" ?>"><?= $price ?></span>
+                        <?php
+                        if ($matelas["discount"] != number_format(0, 2)) {
+                            $discountPrice = $matelas["price"] - $matelas["discount"];
+                            $discountPrice = $formatter->formatCurrency($discountPrice, "EUR");
+                            ?>
+                            <span class="discount-price">
+                                <?= $discountPrice ?>
+                            </span>
+                            <?php
+                        }
+                        ?>
                     </div>
                     <div class="button-wrap">
                         <a href="matelas/<?= $matelas["id"] ?>" class="btn">Détail</a>

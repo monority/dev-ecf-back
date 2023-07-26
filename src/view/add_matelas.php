@@ -19,7 +19,7 @@ class addMatelasView
                 $errors["message"] = $this->controller->errors;
             }
             if (empty($errors)) {
-                if ($this->controller->addMatelas()) {
+                if ($this->controller->add()) {
                     header("Location: ./");
                 } else {
                     $message = "Erreur de bdd";
@@ -29,6 +29,8 @@ class addMatelasView
             }
 
         }
+        $brands = $this->controller->getBrands();
+        $dimensions = $this->controller->getDimensions();
         require($this->template);
 
     }

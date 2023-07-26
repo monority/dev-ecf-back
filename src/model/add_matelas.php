@@ -2,23 +2,22 @@
 class addMatelasModel
 {
     public $db;
-    public $type;
-    public $marque;
-    public $largeur;
-    public $longueur;
+    public $name;
+    public $brand;
+    public $price;
+    public $dimension;
     public $image;
-    public $prix;
-    public $newFilename;
+    public $discount;
     public function __construct($db)
     {
         $this->db = $db;
         if (!empty($_POST)) {
-            $this->marque = trim(strip_tags($_POST['marque']));
-            $this->type = trim(strip_tags($_POST['type']));
+            $this->name = trim(strip_tags($_POST['name']));
+            $this->brand = trim(strip_tags($_POST['brand']));
             $this->image = trim(strip_tags($_POST['image']));
-            $this->largeur = trim(strip_tags($_POST['largeur']));
-            $this->longueur = trim(strip_tags($_POST['longueur']));
-            $this->prix = trim(strip_tags($_POST["prix"]));
+            $this->price = trim(strip_tags($_POST['price']));
+            $this->dimension = trim(strip_tags($_POST['dimension']));
+            $this->discount = trim(strip_tags($_POST["discount"]));
         }
     }
 

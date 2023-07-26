@@ -25,29 +25,34 @@
             <?= $message ?>
 
             <form action="" method="post">
+            <div class="form-group">
+                        <label for="inputName">Nom *</label>
+                        <input type="text" name="name" id="inputName" value="<?= isset($data["name"]) ? $data["name"] : "" ?>" required />
+                    </div>
                 <div class="form-group">
-                    <label for="inputMarque">Marque du matelas :</label>
-                    <input type="text" id="inputMarque" name="marque"
-                        value="<?= isset($data["marque"]) ? $data["marque"] : "" ?>" required />
-                    <?php if (isset($errors["marque"])) {
-                        ?>
-                        <span class="info-error">
-                            <?= $errors["marque"] ?>
-                        </span>
+                    <label for="inputbrand">Marque du matelas :</label>
+                    <select name="brand" id="inputBrand">
                         <?php
-                    } ?>
+                        foreach ($brands as $brand) {
+                            ?>
+                            <option value="<?= $brand["id"] ?>" <?= isset($data["brand"]) && ($brand["id"] == $data["brand"]) ? "selected" : "" ?>><?= $brand["name"] ?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="inputType">Type du matelas : </label>
-                    <input type="text" id="inputType" name="type"
-                        value="<?= isset($data["type"]) ? $data["type"] : "" ?>" required />
-                    <?php if (isset($errors["type"])) {
-                        ?>
-                        <span class="info-error">
-                            <?= $errors["type"] ?>
-                        </span>
+                    <label for="inputDimension">Dimension</label>
+                    <select name="dimension" id="inputDimension">
                         <?php
-                    } ?>
+                        foreach ($dimensions as $dimension) {
+                            ?>
+                            <option value="<?= $dimension["id"] ?>" <?= isset($data["dimension"]) && ($dimension["id"] == $data["dimension"]) ? "selected" : "" ?>><?= $dimension["name"] ?>
+                            </option>
+                            <?php
+                        }
+                        ?>
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -62,24 +67,18 @@
                     } ?>
                 </div>
 
+
                 <div class="form-group">
-                    <label for="inputLargeur">Largeur :</label>
-                    <input type="number" name="largeur" id="inputLargeur"
-                        value="<?= isset($data["largeur"]) ? $data["largeur"] : 0 ?>" required />
+                    <label for="inputPrice">Prix :</label>
+                    <input type="number" name="price" id="inputPrice"
+                        value="<?= isset($data["price"]) ? $data["price"] : 0 ?>" required />
 
                 </div>
                 <div class="form-group">
-                    <label for="inputLongueur">Longueur :</label>
-                    <input type="number" name="longueur" id="inputLongueur"
-                        value="<?= isset($data["longueur"]) ? $data["longueur"] : 0 ?>" required />
+                        <label for="inputDiscount">Remise (en euros)</label>
+                        <input type="number" name="discount" id="inputDiscount" value="<?= $data["discount"] == number_format(0, 2) ? $data["discount"] : 0 ?>" />
+                    </div>
 
-                </div>
-                <div class="form-group">
-                    <label for="inputPrix">Prix :</label>
-                    <input type="number" name="prix" id="inputprix"
-                        value="<?= isset($data["prix"]) ? $data["prix"] : 0 ?>" required />
-
-                </div>
 
                 <input type="submit" value="Ajouter le matelas" class="btn">
 

@@ -13,39 +13,19 @@ class addMatelasController
     public function getForm()
     {
         return array(
-            "marque" => $this->model->marque,
-            "type" => $this->model->type,
+            "brand" => $this->model->brand,
+            "name" => $this->model->name,
             "image" => $this->model->image,
-            "largeur" => $this->model->largeur,
-            "longueur" => $this->model->longueur,
-            "prix" => $this->model->prix
+            "dimension" => $this->model->dimension,
+            "discount" => $this->model->discount,
+            "price" => $this->model->price
         );
     }
-    public function validatePicture()
-    {
-        if (isset($_FILES["picture"]) && $_FILES["picture"]["error"] === UPLOAD_ERR_OK) {
-            $fileTmpPath = $_FILES["picture"]["tmp_name"];
-            $fileName = $_FILES["picture"]["name"];
-            $fileType = $_FILES["picture"]["type"];
-            $fileNameArray = explode(".", $fileName);
-            $fileExtension = end($fileNameArray);
-            $newFileName = md5($fileName . time()) . "." . $fileExtension;
-            $fileDestPath = "../public/assets/img/temp/{$newFileName}";
-            $allowedTypes = array("image/jpeg", "image/png", "image/webp");
 
-            if (in_array($fileType, $allowedTypes)) {
-                move_uploaded_file($fileTmpPath, $fileDestPath);
-            }
-            return true;
-        } else {
-            return false;
-        }
-
-    }
 
     public function validateInput()
     {
-        if (empty($this->model->marque) || empty($this->model->image) || empty($this->model->type) || empty($this->model->largeur) || empty($this->model->longueur) || empty($this->model->prix)) {
+        if (empty($this->model->brand) || empty($this->model->name) || empty($this->model->image) || empty($this->model->dimension) || empty($this->model->discount) || empty($this->model->price)) {
             $this->errors = "Remplisser les champs";
             return false;
         } else {
@@ -53,16 +33,34 @@ class addMatelasController
         }
 
     }
-    public function addMatelas()
+    
+    public function add()
     {
-        $query = $this->model->db->prepare("INSERT INTO literie.matelas (marque, type, image, largeur, longueur, prix) VALUES (:marque, :type, :image, :largeur, :longueur, :prix)");
-        $query->bindParam(":marque", $this->model->marque);
-        $query->bindParam(":type", $this->model->type);
+        $query = $this->model->db->prepare("INSERT INTO products (name, image, price, discount, id_brand, id_dimension) VALUES(:name, :image, :price, :discount, :brand, :dimension)");
+        $query->bindParam(":name", $this->model->name);
         $query->bindParam(":image", $this->model->image);
-        $query->bindParam(":largeur", $this->model->largeur, PDO::PARAM_INT);
-        $query->bindParam(":longueur", $this->model->longueur, PDO::PARAM_INT);
-        $query->bindParam(":prix", $this->model->prix, PDO::PARAM_INT);
-        $query->execute();
+        $query->bindParam(":price", $this->model->price);
+        $query->bindParam(":discount", $this->model->discount);
+        $query->bindParam(":brand", $this->model->brand);
+        $query->bindParam(":dimension", $this->model->dimension);
+
+        if ($query->execute()) {
+            return true;
+        } else {
+            return $query->errorInfo();
+        }
+    }
+    public function getBrands()
+    {
+        $query = $this->model->db->query("SELECT * FROM brands");
+        $res = $query->fetchAll();
+        return $res;
+    }
+    public function getDimensions()
+    {
+        $query = $this->model->db->query("SELECT * FROM dimensions");
+        $res = $query->fetchAll();
+        return $res;
     }
 
 }

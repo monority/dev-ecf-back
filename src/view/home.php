@@ -12,8 +12,8 @@ class HomeView
 
     public function render()
     {
-
         $data = $this->controller->getMatelas();
+        $formatter = new NumberFormatter("fr_FR",  NumberFormatter::CURRENCY);
         require($this->template);
     }
 }
